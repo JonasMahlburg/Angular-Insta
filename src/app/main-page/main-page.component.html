@@ -1,14 +1,5 @@
 @for (post of posts; track $index) {
-    <div class="singlePost">
-        {{post.name}}
-        <img src="{{post.Image}}" alt="">
-        likes:{{post.likes}}
-      @if(post.isLiked){
-        <img (click)="toggleHeart($index)" src="../../assets/img/heart-red.png" alt="">
-      }@else{
-        <img (click)="toggleHeart($index)" src="../../assets/img/heart-black.png" alt="">
-      }
-    </div>
+<app-single-post [singlePost]="post"></app-single-post>
 }
 
 <a [routerLink]="['/contacts']">zu den Kontakten</a>

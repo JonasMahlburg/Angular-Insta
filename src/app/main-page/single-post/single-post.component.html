@@ -1,0 +1,12 @@
+
+
+<div class="singlePost">
+    {{singlePost.name}}
+    <img src="{{singlePost.Image}}" alt="">
+    likes:{{singlePost.likes}}
+  @if(singlePost.isLiked){
+    <img (click)="toggleHearts(singlePost)" src="../../assets/img/heart-red.png" alt="">
+  }@else{
+    <img (click)="toggleHearts(singlePost)" src="../../assets/img/heart-black.png" alt="">
+  }
+</div>

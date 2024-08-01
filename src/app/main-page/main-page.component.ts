@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { RouterModule } from '@angular/router';
+import { SinglePostComponent } from './single-post/single-post.component';
+
 
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, SinglePostComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })
 
 
 export class MainPageComponent {
+
   posts :{
     name: string;
     Image: string;
@@ -35,20 +38,14 @@ export class MainPageComponent {
                         likes: 156,
                         isLiked: false,
                        }];
+  
+  
 
   constructor(){
 
   }
 
- toggleHeart(index: number){
-if (this.posts[index].isLiked) {
-  this.posts[index].isLiked = false;
-  this.posts[index].likes--;
-}else{
-  this.posts[index].isLiked = true;
-  this.posts[index].likes++;
-}
-  
-  }
+
+
 }
 
