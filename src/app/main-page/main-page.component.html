@@ -1,5 +1,5 @@
 @for (post of posts; track $index) {
-<app-single-post [singlePost]="post"></app-single-post>
+<app-single-post [singlePost]="post" (newItemEvent)="addItem($event, $index)"></app-single-post>
 }
 
 <a [routerLink]="['/contacts']">zu den Kontakten</a>

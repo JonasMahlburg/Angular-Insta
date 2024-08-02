@@ -5,8 +5,17 @@
     <img src="{{singlePost.Image}}" alt="">
     likes:{{singlePost.likes}}
   @if(singlePost.isLiked){
-    <img (click)="toggleHearts(singlePost)" src="../../assets/img/heart-red.png" alt="">
+    <img class="heart" (click)="toggleHearts(singlePost)" src="../../assets/img/heart-red.png" alt="">
   }@else{
-    <img (click)="toggleHearts(singlePost)" src="../../assets/img/heart-black.png" alt="">
+    <img class="heart"  (click)="toggleHearts(singlePost)" src="../../assets/img/heart-black.png" alt="">
   }
+
+  <label>Add an comment: <input [(ngModel)]="comment"></label>
+<button (click)="addNewItem()">Kommentier mich</button>
+<div class="comments" [ngClass]="{'comments': singlePost.comments.length >0}">
+  @for (comment of singlePost.comments; track $index) {
+    <p>Kommentar {{$index}}: {{comment}}</p>
+  }
+</div>
+
 </div>

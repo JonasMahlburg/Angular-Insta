@@ -16,34 +16,40 @@ import { SinglePostComponent } from './single-post/single-post.component';
 
 export class MainPageComponent {
 
+  comments = ['item1', 'item2', 'item3', 'item4'];
+
   posts :{
     name: string;
     Image: string;
     likes: number;
-  isLiked: boolean;}[] = [{
+  isLiked: boolean;
+comments: string[]}[] = [{
                        name: "Hans",
                        Image: "./assets/img/banana.jpg",
                        likes: 1234,
                        isLiked: false,
+                       comments: ['wünschte meine würden auch so wachsen', 'unreifes Ding']
                       },
                       {
                         name: "Hildegard",
                         Image: "./assets/img/orange.jpg",
                         likes: 12,
                         isLiked: false,
+                        comments: ['yummy']
                        },
                        {
                         name: "Dieter",
                         Image: "./assets/img/currant.jpg",
                         likes: 156,
                         isLiked: false,
+                        comments: ['Ich mag Züge']
                        }];
   
   
 
-  constructor(){
-
-  }
+                       addItem(newItem: string, i: number) {
+                        this.posts[i].comments.push(newItem);
+                      }
 
 
 
