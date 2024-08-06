@@ -1,0 +1,17 @@
+@for (item of abonenten.subscribers; track $index) {
+    <div>
+        <p>{{abonenten.subscribers[$index].name}}</p>
+        @if (abonenten.subscribers[$index].followsYou) {
+            <p>folgt dir</p>
+        }@else {
+            <p>folgt dir nicht</p>
+        }
+    </div>
+    <div>
+        @if (abonenten.subscribers[$index].followed) {
+            <p>nicht mehr folgen</p>
+        }@else {
+            <p>folgen</p>
+        }
+    </div>
+}

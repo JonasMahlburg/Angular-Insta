@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { RouterModule } from '@angular/router';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { SubscribersComponent } from "../subscribers/subscribers.component";
 
 
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, SinglePostComponent],
+  imports: [CommonModule, RouterModule, SinglePostComponent, SubscribersComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })
